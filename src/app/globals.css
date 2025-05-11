@@ -1,0 +1,175 @@
+/* src/app/globals.css - Add these custom utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+/* Custom focus styles */
+*:focus-visible {
+  @apply outline-none ring-2 ring-indigo-500 ring-offset-2;
+}
+
+/* Toast animations */
+@keyframes slideInUp {
+  from {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutDown {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+}
+
+.animate-slideInUp {
+  animation: slideInUp 0.3s ease-out forwards;
+}
+
+.animate-slideOutDown {
+  animation: slideOutDown 0.3s ease-in forwards;
+}
+
+/* Custom animation utilities */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 10%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.4s ease-out forwards;
+}
+
+/* Custom glow effects for CTA buttons */
+.hover\:shadow-glow-mango:hover {
+  box-shadow: 0 0 15px 2px rgba(245, 171, 84, 0.6);
+}
+
+.hover\:shadow-glow-white:hover {
+  box-shadow: 0 0 15px 2px rgba(255, 255, 255, 0.4);
+}
+
+.hover\:shadow-glow-poppy:hover {
+  box-shadow: 0 0 15px 2px rgba(238, 90, 54, 0.6);
+}
+
+.hover\:shadow-glow-babyBlue:hover {
+  box-shadow: 0 0 15px 2px rgba(159, 196, 232, 0.6);
+}
+
+.hover\:shadow-glow-lavender:hover {
+  box-shadow: 0 0 15px 2px rgba(207, 164, 204, 0.6);
+}
+
+.hover\:shadow-glow-forest:hover {
+  box-shadow: 0 0 15px 2px rgba(26, 149, 98, 0.6);
+}
+
+/* Gradient text utilities */
+.text-gradient-primary {
+  @apply bg-gradient-to-r from-babyBlue to-lavender bg-clip-text text-transparent;
+}
+
+.text-gradient-accent {
+  @apply bg-gradient-to-r from-poppy to-mango bg-clip-text text-transparent;
+}
+
+.text-gradient-nature {
+  @apply bg-gradient-to-r from-forest to-mango bg-clip-text text-transparent;
+}
+
+/* Enhanced background patterns */
+.bg-dot-pattern {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.bg-diagonal-lines {
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.03),
+    rgba(0, 0, 0, 0.03) 1px,
+    transparent 1px,
+    transparent 10px
+  );
+}
+
+/* Custom shape dividers */
+.shape-divider-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.shape-divider-bottom svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 50px;
+}
+
+.shape-divider-bottom .shape-fill {
+  fill: #FFFFFF;
+}
+
+.shape-divider-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.shape-divider-top svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 50px;
+}
+
+.shape-divider-top .shape-fill {
+  fill: #FFFFFF;
+}
