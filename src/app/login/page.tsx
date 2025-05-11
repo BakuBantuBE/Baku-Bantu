@@ -145,38 +145,6 @@ export default function LoginPage() {
           </Link>
         </div>
 
-        {/* Demo Accounts */}
-        <div className="bg-blue-50 p-4 rounded-md">
-          <div className="flex justify-between items-center mb-2">
-            <h4 className="text-sm font-medium text-blue-800">Demo Account</h4>
-            <button
-              type="button"
-              className="text-xs text-blue-600 hover:text-blue-800"
-              onClick={() => setShowDemo(!showDemo)}
-            >
-              {showDemo ? 'Hide' : 'Show'} Details
-            </button>
-          </div>
-          {showDemo && (
-            <div className="space-y-2">
-              <div className="flex justify-between items-center">
-                <div>
-                  <p className="text-xs font-medium text-gray-700">Super Admin</p>
-                  <p className="text-xs text-gray-500">hoka1@gmail.com / 1408Hoka</p>
-                </div>
-                <Button
-                  type="button"
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => fillDemoCredentials('hoka1@gmail.com', '1408Hoka')}
-                >
-                  Use
-                </Button>
-              </div>
-            </div>
-          )}
-        </div>
-
         <Button 
           type="submit" 
           size="full" 
